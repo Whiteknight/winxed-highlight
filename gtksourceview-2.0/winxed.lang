@@ -42,12 +42,8 @@
         <style id="null-value" _name="Null Value" map-to="def:special-constant"/>
         <style id="boolean" _name="Boolean value" map-to="def:boolean"/>
         <style id="keyword" _name="Keyword" map-to="def:keyword"/>
-        <style id="object" _name="Object"/> <!--map-to="def:others"-->
         <style id="type" _name="Data Type" map-to="def:type"/>
         <style id="function" _name="Function" map-to="def:function"/>
-        <style id="properties" _name="Properties" map-to="def:statement"/>
-        <style id="constructors" _name="Constructors" map-to="def:type"/>
-        <style id="future-words" _name="Future Reserved Keywords" map-to="def:error"/>
     </styles>
 
     <definitions>
@@ -116,7 +112,7 @@
                     <keyword>function</keyword>
                     <keyword>self</keyword>
                     <keyword>var</keyword>
-		    <keyword>int</keyword>
+                    <keyword>int</keyword>
                     <keyword>string</keyword>
                     <keyword>float</keyword>
                     <keyword>break</keyword>
@@ -135,12 +131,13 @@
                     <keyword>try</keyword>
                     <keyword>catch</keyword>
                     <keyword>delete</keyword>
-		    <keyword>exists</keyword>
+                    <keyword>exists</keyword>
                     <keyword>instanceof</keyword>
                     <keyword>new</keyword>
                     <keyword>throw</keyword>
                     <keyword>typeof</keyword>
-		    <keyword>using</keyword>
+                    <keyword>using</keyword>
+                    <keyword>namespace</keyword>
                 </context>
             </include>
         </context>
