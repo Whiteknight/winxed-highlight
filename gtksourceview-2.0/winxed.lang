@@ -106,6 +106,34 @@
                     <keyword>true</keyword>
                 </context>
 
+                <context id="function" style-ref="function">
+                    <keyword>load_bytecode</keyword>
+                    <keyword>say</keyword>
+                    <keyword>find_method</keyword>
+                    <keyword>elements</keyword>
+                    <keyword>length</keyword>
+                    <keyword>substr</keyword>
+                    <keyword>replace</keyword>
+                    <keyword>indexof</keyword>
+                    <keyword>join</keyword>
+                    <keyword>split</keyword>
+                    <keyword>push</keyword>
+                    <keyword>pop</keyword>
+                    <keyword>getinterp</keyword>
+                    <keyword>get_class</keyword>
+                    <keyword>typeof</keyword>
+                    <keyword>getattribute</keyword>
+                    <keyword>clone</keyword>
+                    <keyword>compreg</keyword>
+                    <keyword>load_language</keyword>
+                    <keyword>loadlib</keyword>
+                    <keyword>dlfunc</keyword>
+                    <keyword>sprintf</keyword>
+                    <keyword>print</keyword>
+                    <keyword>cry</keyword>
+                    <keyword>invoke</keyword>
+                </context>
+
                 <!-- Keywords -->
                 <context id="keywords" style-ref="keyword">
                     <keyword>const</keyword>
