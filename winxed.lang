@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ winxed.lang is roughly based on javascript.lang from the gtksourceview-2.0
+ source. The original copyright notice for that file appears below.
+
+ Author: Scott Martin <scott@coffeeblack.org>
+ Copyright (C) 2004 Scott Martin <scott@coffeeblack.org>
+ Copyright (C) 2005 Stef Walter (formerly Nate Nielsen) <stef@memberwebs.com>
+ Copyright (C) 2005-2007 Marco Barisione <barisione@gmail.com>
+ Copyright (C) 2005-2007 Emanuele Aina
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+
+-->
+<language id="winxed" _name="Winxed" version="2.0" _section="Scripts">
+    <metadata>
+        <property name="mimetypes">application/winxed;application/x-winxed;text/x-winxed;text/winxed</property>
+        <property name="globs">*.winxed</property>
+        <property name="line-comment-start">//</property>
+        <property name="block-comment-start">/*</property>
+        <property name="block-comment-end">*/</property>
+    </metadata>
+
+    <styles>
+        <style id="comment" _name="Comment" map-to="def:comment"/>
+        <style id="error" _name="Error" map-to="def:error"/>
+        <style id="string" _name="String" map-to="def:string"/>
+        <style id="null-value" _name="Null Value" map-to="def:special-constant"/>
+        <style id="boolean" _name="Boolean value" map-to="def:boolean"/>
+        <style id="keyword" _name="Keyword" map-to="def:keyword"/>
+        <style id="object" _name="Object"/> <!--map-to="def:others"-->
+        <style id="type" _name="Data Type" map-to="def:type"/>
+        <style id="function" _name="Function" map-to="def:function"/>
+        <style id="properties" _name="Properties" map-to="def:statement"/>
+        <style id="constructors" _name="Constructors" map-to="def:type"/>
+        <style id="future-words" _name="Future Reserved Keywords" map-to="def:error"/>
+    </styles>
+
+    <definitions>
+        <context id="winxed">
+            <include>
+
+                <!-- Comments -->
+                <context id="line-comment" style-ref="comment">
+                    <start>//</start>
+                    <end>$</end>
+                    <include>
+                        <context ref="def:line-continue"/>
+                        <context ref="def:in-comment"/>
+                    </include>
+                </context>
+
+                <context id="block-comment" style-ref="comment">
+                    <start>/\*</start>
+                    <end>\*/</end>
+                    <include>
+                        <context ref="def:in-comment"/>
+                    </include>
+                </context>
+
+                <context id="close-comment-outside-comment" style-ref="error">
+                    <match>\*/(?!\*)</match>
+                </context>
+
+                <!-- Strings -->
+                <context id="string-double" end-at-line-end="true" style-ref="string">
+                    <start>"</start>
+                    <end>"</end>
+                    <include>
+                        <context ref="def:line-continue"/>
+                        <context ref="def:escape"/>
+                    </include>
+                </context>
+
+                <context id="string-single" end-at-line-end="true" style-ref="string">
+                    <start>'</start>
+                    <end>'</end>
+                    <include>
+                        <context ref="def:line-continue"/>
+                        <context ref="def:escape"/>
+                    </include>
+                </context>
+
+                <!-- Numbers -->
+                <context ref="def:float"/>
+                <context ref="def:decimal"/>
+                <context ref="def:octal"/>
+                <context ref="def:hexadecimal"/>
+
+                <!-- Constants -->
+                <context id="null-value" style-ref="null-value">
+                    <keyword>null</keyword>
+                </context>
+                <context id="boolean" style-ref="boolean">
+                    <keyword>false</keyword>
+                    <keyword>true</keyword>
+                </context>
+
+                <!-- Keywords -->
+                <context id="keywords" style-ref="keyword">
+                    <keyword>const</keyword>
+                    <keyword>function</keyword>
+                    <keyword>self</keyword>
+                    <keyword>var</keyword>
+		    <keyword>int</keyword>
+                    <keyword>string</keyword>
+                    <keyword>float</keyword>
+                    <keyword>break</keyword>
+                    <keyword>case</keyword>
+                    <keyword>continue</keyword>
+                    <keyword>default</keyword>
+                    <keyword>do</keyword>
+                    <keyword>else</keyword>
+                    <keyword>for</keyword>
+                    <keyword>if</keyword>
+                    <keyword>in</keyword>
+                    <keyword>return</keyword>
+                    <keyword>switch</keyword>
+                    <keyword>while</keyword>
+                    <keyword>with</keyword>
+                    <keyword>try</keyword>
+                    <keyword>catch</keyword>
+                    <keyword>delete</keyword>
+		    <keyword>exists</keyword>
+                    <keyword>instanceof</keyword>
+                    <keyword>new</keyword>
+                    <keyword>throw</keyword>
+                    <keyword>typeof</keyword>
+		    <keyword>using</keyword>
+                </context>
+            </include>
+        </context>
+    </definitions>
+</language>
