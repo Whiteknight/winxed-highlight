@@ -102,10 +102,11 @@
                 </context>
 
                 <!-- Preprocessor -->
+                <!-- TODO: This doesn't seem to be working -->
                 <context id="preprocessor" style-ref="preprocessor">
-                    <keyword>$include_const</keyword>
-                    <keyword>$load</keyword>
-                    <keyword>$loadlib</keyword>
+                    <keyword>\$include_const</keyword>
+                    <keyword>\$load</keyword>
+                    <keyword>\$loadlib</keyword>
                 </context>
 
                 <!-- Numbers -->
@@ -123,6 +124,7 @@
                     <keyword>true</keyword>
                 </context>
 
+                <!-- Built-in Functions -->
                 <context id="function" style-ref="function">
                     <keyword>load_bytecode</keyword>
                     <keyword>say</keyword>
@@ -182,6 +184,8 @@
                     <keyword>throw</keyword>
                     <keyword>typeof</keyword>
                     <keyword>using</keyword>
+                    <keyword>extern</keyword>
+                    <keyword>static</keyword>
                     <keyword>namespace</keyword>
                 </context>
             </include>
