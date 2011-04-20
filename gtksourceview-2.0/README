@@ -1,0 +1,7 @@
+This highlighting file is for gtkSourceView 2.0. It will work with any editor
+which relies on that control (gedit, scribes, medit, etc). Finding the correct
+place to put this file on your system is an exercise for the user.
+
+More info:
+
+    http://developer.gnome.org/gtksourceview/stable/lang-tutorial.html
