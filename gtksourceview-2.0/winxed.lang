@@ -44,6 +44,7 @@
         <style id="keyword" _name="Keyword" map-to="def:keyword"/>
         <style id="type" _name="Data Type" map-to="def:type"/>
         <style id="function" _name="Function" map-to="def:function"/>
+        <style id="preprocessor" _name="Preprocessor" map-to="def:preprocessor"/>
     </styles>
 
     <definitions>
@@ -98,6 +99,13 @@
                         <context ref="def:line-continue"/>
                         <context ref="def:escape"/>
                     </include>
+                </context>
+
+                <!-- Preprocessor -->
+                <context id="preprocessor" style-ref="preprocessor">
+                    <keyword>$include_const</keyword>
+                    <keyword>$load</keyword>
+                    <keyword>$loadlib</keyword>
                 </context>
 
                 <!-- Numbers -->
