@@ -187,6 +187,7 @@
                     <keyword>extern</keyword>
                     <keyword>static</keyword>
                     <keyword>namespace</keyword>
+                    <keyword>class</keyword>
                 </context>
             </include>
         </context>
