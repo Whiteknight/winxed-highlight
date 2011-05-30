@@ -188,6 +188,7 @@
                     <keyword>static</keyword>
                     <keyword>namespace</keyword>
                     <keyword>class</keyword>
+                    <keyword>yield</keyword>
                 </context>
             </include>
         </context>
