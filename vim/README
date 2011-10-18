@@ -1,0 +1,7 @@
+This file provides basic syntax highlighting for Vim.
+
+It should be placed in ~/.vim/syntax/ (%USERPROFILE%\_vim\syntax on
+Windows).  Not included is the ~/.vim/ftdetect/winxed.vim file which should
+contain simply:
+
+au BufRead,BufNewFile *.winxed set filetype=winxed
