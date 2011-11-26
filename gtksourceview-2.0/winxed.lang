@@ -188,6 +188,7 @@
                     <keyword>namespace</keyword>
                     <keyword>class</keyword>
                     <keyword>yield</keyword>
+                    <keyword>inline</keyword>
                 </context>
             </include>
         </context>
