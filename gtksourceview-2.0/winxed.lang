@@ -109,9 +109,11 @@
                 <!-- Preprocessor -->
                 <!-- TODO: This doesn't seem to be working -->
                 <context id="preprocessor" style-ref="preprocessor">
-                    <keyword>\$include_const</keyword>
-                    <keyword>\$load</keyword>
-                    <keyword>\$loadlib</keyword>
+                    <prefix>\$</prefix>
+                    <keyword>include</keyword>
+                    <keyword>include_const</keyword>
+                    <keyword>load</keyword>
+                    <keyword>loadlib</keyword>
                 </context>
 
                 <!-- Numbers -->
