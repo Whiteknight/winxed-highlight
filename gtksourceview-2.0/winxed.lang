@@ -134,6 +134,7 @@
                     <keyword>clone</keyword>
                     <keyword>compreg</keyword>
                     <keyword>cry</keyword>
+                    <keyword>die</keyword>
                     <keyword>dlfunc</keyword>
                     <keyword>elements</keyword>
                     <keyword>exit</keyword>
@@ -145,6 +146,9 @@
                     <keyword>getattribute</keyword>
                     <keyword>get_class</keyword>
                     <keyword>getinterp</keyword>
+                    <keyword>getstderr</keyword>
+                    <keyword>getstdin</keyword>
+                    <keyword>getstdout</keyword>
                     <keyword>indexof</keyword>
                     <keyword>invoke</keyword>
                     <keyword>join</keyword>
@@ -163,6 +167,10 @@
 
                 <!-- Keywords -->
                 <context id="keywords" style-ref="keyword">
+                    <keyword>__CLASS__</keyword>
+                    <keyword>__DEBUG__</keyword>
+                    <keyword>__FUNCTION__</keyword>
+                    <keyword>__NAMESPACE__</keyword>
                     <keyword>anon</keyword>
                     <keyword>break</keyword>
                     <keyword>case</keyword>
@@ -208,6 +216,7 @@
                     <keyword>typeof</keyword>
                     <keyword>using</keyword>
                     <keyword>var</keyword>
+                    <keyword>vtable</keyword>
                     <keyword>while</keyword>
                     <keyword>yield</keyword>
                 </context>
