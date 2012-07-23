@@ -46,8 +46,9 @@ syn keyword winxedException   try catch throw
 syn keyword winxedFunction    function
 syn match   winxedBraces      "[{}\[\]]"
 syn match   winxedParens      "[()]"
+syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)+
 
-syn keyword winxedKeyword $include $include_const $load $loadlib class const exists extern goto namespace static using volatile
+syn keyword winxedKeyword class const exists extern goto namespace static using volatile
 
 if version >= 508 || !exists("did_winxed_syn_inits")
 	if version < 508
@@ -82,6 +83,7 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedLabel       Label
 	HiLink winxedException   Exception
 	HiLink winxedKeyword     Keyword
+	HiLink winxedDirective   PreProc
 
 	delcommand HiLink
 endif
