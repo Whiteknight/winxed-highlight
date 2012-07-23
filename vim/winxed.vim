@@ -5,7 +5,6 @@
 " Based on the javascript syntax file
 
 " TODO:
-"  * heredocs
 "  * PIR
 "  * builtins
 "  * attributes
@@ -29,6 +28,7 @@ syn region  winxedComment     start="/\*" end="\*/" contains=@Spell,winxedCommen
 syn match   winxedSpecial     "\v\\([abtnvfre]|c[A-Z]|x(\{\x{1,8}\}|\x\x\?)|u\x{4}|U\x{8}|\o{1,3})"
 syn region  winxedStringD     start=+"+ skip=+\\\\\|\\"+ end=+"\|$+ contains=winxedSpecial
 syn region  winxedStringS     start=+'+ end=+'\|$+
+syn region  winxedHeredoc     matchgroup=winxedHereMark start=+<<:\z(.*\)$+ end=+^\z1:>>$+
 
 syn match   winxedNumber "\m0[xX]\x\+|\d(.\d+)?([eE][+-]\d\+)?"
 
@@ -62,6 +62,8 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedSpecial     Special
 	HiLink winxedStringS     String
 	HiLink winxedStringD     String
+	HiLink winxedHeredoc     String
+	HiLink winxedHereMark    Special
 	HiLink winxedNumber      winxedValue
 	HiLink winxedConditional Conditional
 	HiLink winxedRepeat      Repeat
