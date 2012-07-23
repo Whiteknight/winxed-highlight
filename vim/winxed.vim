@@ -43,7 +43,7 @@ syn keyword winxedNull        null
 syn keyword winxedIdentifier  self
 syn keyword winxedLabel       case default
 syn keyword winxedException   try catch throw
-syn keyword winxedFunction    function
+syn keyword winxedFunction    function inline
 syn match   winxedBraces      "[{}\[\]]"
 syn match   winxedParens      "[()]"
 syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)+
@@ -72,7 +72,7 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedOperator    Operator
 	HiLink winxedType        Type
 	HiLink winxedStatement   Statement
-	HiLink winxedFunction    Function
+	HiLink winxedFunction    Keyword
 	HiLink winxedBraces      Function
 	HiLink winxedError       Error
 	HiLink winxedParenError  winxedError
