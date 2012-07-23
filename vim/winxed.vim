@@ -6,7 +6,6 @@
 
 " TODO:
 "  * PIR
-"  * builtins
 "  * attributes
 
 if !exists("main_syntax")
@@ -44,6 +43,8 @@ syn keyword winxedIdentifier  self
 syn keyword winxedLabel       case default
 syn keyword winxedException   try catch throw
 syn keyword winxedFunction    function inline
+syn keyword winxedBuiltin     die exit time floattime sleep spawnw getstdin getstdout getstderr open Error elements length bytelength chr ord substr replace indexof join escape unescape trans_encoding encoding_name upcase downcase titlecase split chomp push unshift abs sqrt pow exp ln sin cos tan asin acos atan sinh cosh tanh getinterp getcontext get_context get_class typeof getattribute setattribute find_method callmethodwithargs clone compreg load_language loadlib load_bytecode load_packfile dlfunc sprintf print say cry __ASSERT__ invoke
+syn match   winxedBuiltinType +\(pop\|shift\)_\(var\|int\|float\|string\)+
 syn match   winxedBraces      "[{}\[\]]"
 syn match   winxedParens      "[()]"
 syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)+
@@ -73,6 +74,8 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedType        Type
 	HiLink winxedStatement   Statement
 	HiLink winxedFunction    Keyword
+	HiLink winxedBuiltin     Function
+	HiLink winxedBuiltinType Function
 	HiLink winxedBraces      Function
 	HiLink winxedError       Error
 	HiLink winxedParenError  winxedError
