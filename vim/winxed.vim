@@ -5,9 +5,7 @@
 " Based on the javascript syntax file
 
 " TODO:
-"  * heredocs
 "  * PIR
-"  * builtins
 "  * attributes
 
 if !exists("main_syntax")
@@ -29,6 +27,7 @@ syn region  winxedComment     start="/\*" end="\*/" contains=@Spell,winxedCommen
 syn match   winxedSpecial     "\v\\([abtnvfre]|c[A-Z]|x(\{\x{1,8}\}|\x\x\?)|u\x{4}|U\x{8}|\o{1,3})"
 syn region  winxedStringD     start=+"+ skip=+\\\\\|\\"+ end=+"\|$+ contains=winxedSpecial
 syn region  winxedStringS     start=+'+ end=+'\|$+
+syn region  winxedHeredoc     matchgroup=winxedHereMark start=+<<:\z(.*\)$+ end=+^\z1:>>$+
 
 syn match   winxedNumber "\m0[xX]\x\+|\d(.\d+)?([eE][+-]\d\+)?"
 
@@ -43,11 +42,14 @@ syn keyword winxedNull        null
 syn keyword winxedIdentifier  self
 syn keyword winxedLabel       case default
 syn keyword winxedException   try catch throw
-syn keyword winxedFunction    function
+syn keyword winxedFunction    function inline
+syn keyword winxedBuiltin     die exit time floattime sleep spawnw getstdin getstdout getstderr open Error elements length bytelength chr ord substr replace indexof join escape unescape trans_encoding encoding_name upcase downcase titlecase split chomp push unshift abs sqrt pow exp ln sin cos tan asin acos atan sinh cosh tanh getinterp getcontext get_context get_class typeof getattribute setattribute find_method callmethodwithargs clone compreg load_language loadlib load_bytecode load_packfile dlfunc sprintf print say cry __ASSERT__ invoke
+syn match   winxedBuiltinType +\(pop\|shift\)_\(var\|int\|float\|string\)+
 syn match   winxedBraces      "[{}\[\]]"
 syn match   winxedParens      "[()]"
+syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)\>+
 
-syn keyword winxedKeyword $include $include_const $load $loadlib class const exists extern goto namespace static using volatile
+syn keyword winxedKeyword class const exists extern goto namespace static using volatile
 
 if version >= 508 || !exists("did_winxed_syn_inits")
 	if version < 508
@@ -62,6 +64,8 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedSpecial     Special
 	HiLink winxedStringS     String
 	HiLink winxedStringD     String
+	HiLink winxedHeredoc     String
+	HiLink winxedHereMark    Special
 	HiLink winxedNumber      winxedValue
 	HiLink winxedConditional Conditional
 	HiLink winxedRepeat      Repeat
@@ -69,7 +73,9 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedOperator    Operator
 	HiLink winxedType        Type
 	HiLink winxedStatement   Statement
-	HiLink winxedFunction    Function
+	HiLink winxedFunction    Keyword
+	HiLink winxedBuiltin     Function
+	HiLink winxedBuiltinType Function
 	HiLink winxedBraces      Function
 	HiLink winxedError       Error
 	HiLink winxedParenError  winxedError
@@ -80,6 +86,7 @@ if version >= 508 || !exists("did_winxed_syn_inits")
 	HiLink winxedLabel       Label
 	HiLink winxedException   Exception
 	HiLink winxedKeyword     Keyword
+	HiLink winxedDirective   PreProc
 
 	delcommand HiLink
 endif
