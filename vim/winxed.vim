@@ -47,7 +47,7 @@ syn keyword winxedBuiltin     die exit time floattime sleep spawnw getstdin gets
 syn match   winxedBuiltinType +\(pop\|shift\)_\(var\|int\|float\|string\)+
 syn match   winxedBraces      "[{}\[\]]"
 syn match   winxedParens      "[()]"
-syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)+
+syn match   winxedDirective   +^\$\(include\(_const\)\?\|load\|loadlib\)\>+
 
 syn keyword winxedKeyword class const exists extern goto namespace static using volatile
 
